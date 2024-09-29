@@ -85,7 +85,7 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     background-position: 0 0;
-    animation: back 30s linear infinite;
+    animation: back 20s linear infinite;
 }
 
 @keyframes back {
