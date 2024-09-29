@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html ::-webkit-scrollbar{
+    display: none;
+}
+
+body {
+    background-color: #FFE000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Lato';
+}
+
+#landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100vh; 
+    overflow: hidden;
+}
+
+.uptop {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    color: white;
+}
+
+.sss {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 1.3rem;
+}
+
+.add-ons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.add-ons .logo {
+    width: 40px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.add-ons .seal {
+    width: 50px;
+    height: 40px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.add-ons .line {
+    border: 2px solid white;
+    width: 100%;
+    color: white;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.text h1 {
+    font-size: 100px;
+    position: relative;
+    z-index: 2;
+}
+
+.text span {
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    background: url(../assets/back.png);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-position: 0 0;
+    animation: back 30s linear infinite;
+}
+
+@keyframes back {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 2000px 0;
+    }
+}
+
+.ktn h1{
+    font-size: 50px;
+}
+
+.ktn p {
+    text-align: right;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.container {
+    width: 1150px;
+    height: 600px;
+    position: relative;
+    left: 4rem;
+    bottom: 6.5rem;
+}
+
+.cotocola {
+    position: absolute;
+    right: 25em;
+    top: 3.2rem;
+    height: 600px;
+    width: 500px;
+}
+
+@keyframes running_text {
+    0% {
+        transform: translateX(0%); 
+    }
+    100% {
+        transform: translateX(-100%); 
+    }
+}
+
+.running-text {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    overflow: hidden;
+}
+
+.running-text .toripuruesu {
+    display: flex;
+    position: relative;
+    font-size: 32px;
+    margin: 5px 0;
+    bottom: 0;
+    white-space: nowrap;
+    color: #FFE000;
+    animation: running_text 10s linear infinite;
+}
