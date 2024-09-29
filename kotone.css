@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
 
 * {
     margin: 0;
@@ -117,7 +118,7 @@ body {
 .cotocola {
     position: absolute;
     right: 25em;
-    top: 3.2rem;
+    top: 2.8rem;
     height: 600px;
     width: 500px;
 }
@@ -148,4 +149,137 @@ body {
     white-space: nowrap;
     color: #FFE000;
     animation: running_text 10s linear infinite;
+}
+
+#gallery {
+    background-color: #FFE000;
+    background-image:
+    repeating-linear-gradient(
+        to right, transparent 0 100px,
+        white 100px 101px
+    ),
+    repeating-linear-gradient(
+        to bottom, transparent 0 100px,
+        white 100px 101px
+    );
+}
+
+#gallery::before {
+    position: absolute;
+    width: min(1400px, 90vw);
+    top: 110%;
+    left: 50%;
+    height: 90%;
+    transform: translateX(-50%);
+    content: '';
+    background-image: url(assets/bg.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    pointer-events: none;
+}
+
+.gal-wrap{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.gal-wrap .slider{
+    position: absolute;
+    width: 200px;
+    height: 290px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1200px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+
+@keyframes autoRun{
+    from{
+        transform: perspective(1200px) rotateX(-16deg) rotateY(0deg);
+    }to{
+        transform: perspective(1200px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+.gal-wrap .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+}
+.gal-wrap .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.gal-wrap .words {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-bottom: 90px;
+    text-align: left;
+    margin-left: 3rem;
+    z-index: 2;
+    width: min(1200px, 100vw);
+}
+
+.gal-wrap .words h1 {
+    color: white;
+    font-size: 100px;
+    font-weight: 900;
+    font-family: 'ICA Rubrik';
+}
+
+.gal-wrap .words .triples-infos button {
+    border-radius: 10px;
+    background-color: white;
+    border-color: #FFE000;
+    color: #FFC201;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 10px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    font-family: "ICA Rubrik";
+    margin: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.gal-wrap .words .triples-infos button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.gal-wrap .words .triples-infos button span:after {
+    content: '\00bb';
+    font-size: 20px;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+.gal-wrap .words .triples-infos button:hover span {
+    padding-right: 25px;
+}
+  
+.gal-wrap .words .triples-infos button:hover span:after {
+    opacity: 1;
+    right: 0;
 }
