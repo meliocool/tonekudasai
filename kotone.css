@@ -8,7 +8,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth;    
 }
 
 html ::-webkit-scrollbar{
@@ -28,6 +28,15 @@ body {
     justify-content: space-between; 
     height: 100vh; 
     overflow: hidden;
+    background-image:
+    repeating-linear-gradient(
+        to right, transparent 0 100px,
+        white 100px 101px
+    ),
+    repeating-linear-gradient(
+        to bottom, transparent 0 100px,
+        white 100px 101px
+    );
 }
 
 .uptop {
@@ -282,4 +291,76 @@ body {
 .gal-wrap .words .triples-infos button:hover span:after {
     opacity: 1;
     right: 0;
+}
+
+#popular-ships {
+    background-color: #FFE000;
+    background-image:
+    repeating-linear-gradient(
+        to right, transparent 0 100px,
+        white 100px 101px
+    ),
+    repeating-linear-gradient(
+        to bottom, transparent 0 100px,
+        white 100px 101px
+    );
+}
+
+#popular-ships .pophead {
+    text-align: center;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    background: url(../assets/back.png);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+    font-size: 96px;
+    margin-bottom: 1rem;
+    font-family: 'ICA Rubrik';
+}
+
+.card {
+    padding: 2em;
+    border: 3px solid #FFC201;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    margin: 0 1rem;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: autoShow both;
+    animation-timeline: view(100% 5%);
+}
+
+.card img {
+    width: 450px;
+    height: 300px;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    z-index: 2;
+}
+
+#lovemin img {
+    width: 450px;
+    height: 300px;
+}
+
+.ship-container {
+    display: grid;
+    grid-template-columns: 
+    repeat(2, minmax(600px, 1fr));
+    gap: 15px;
+    justify-content: center;
+}
+
+@keyframes autoShow {
+    from{
+        opacity: 0;
+        transform: translateY(200px) scale(0.3);
+    } to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
