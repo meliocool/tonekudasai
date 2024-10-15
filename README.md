@@ -8,7 +8,7 @@ A website dedicated for Kotone (코토네), a Japanese rapper and singer under M
 
 Project Structure  
 =
-Just HTML CSS AND JavaScript
+HTML CSS AND JavaScript
 
 Prerequisites  
 =
