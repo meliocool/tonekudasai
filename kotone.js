@@ -1,4 +1,4 @@
-const words = ["TONE KUDASAI", "KOTONE", "KAMIMOTO", "TRIPLES", "COTOCOLA"];
+const words = ["TONE KUDASAI", "KOTONE", "KAMIMOTO", "TRIPLES", "COTOCOLA", "S11"];
         
 let currentIndex = 0;
 let currentText = '';
